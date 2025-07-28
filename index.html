@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Memory Card Flip Game - Two Players</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-theme="light">
+  <main>
+    <h1>Memory Card Flip Game</h1>
+    <div class="scoreboard-wrapper">
+      <div class="scoreboard">
+        <div id="player1box" class="pbox active">
+          Player 1: <span id="score1">0</span>
+        </div>
+        <div id="player2box" class="pbox">
+          Player 2: <span id="score2">0</span>
+        </div>
+      </div>
+    </div>
+    <section class="top-bar">
+      <div class="move-timer">
+        <div>Moves: <span id="movesCount">0</span></div>
+        <div>Time: <span id="timer">00:00</span></div>
+      </div>
+      <button id="resetBtn" aria-label="Restart Game">Restart</button>
+      <button id="themeToggle" aria-pressed="false" aria-label="Toggle Dark/Light Theme">🌙</button>
+    </section>
+    <section id="game-board" aria-live="polite" aria-label="Memory cards game board"></section>
+  </main>
+
+  <!-- Victory Modal -->
+  <div id="victoryModal" role="dialog" aria-modal="true" aria-labelledby="victoryTitle" aria-describedby="victoryDesc" class="hidden">
+    <div id="victoryContent">
+      <h2 id="victoryTitle"></h2>
+      <p id="victoryDesc"></p>
+      <button id="playAgainBtn" aria-label="Play Again">Play Again</button>
+    </div>
+  </div>
+  <canvas id="confetti" aria-hidden="true" class="hidden"></canvas>
+  <audio id="flipSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_0b7b4eeb79.mp3?filename=card-flip-6469.mp3" preload="auto"></audio>
+  <audio id="matchSound" src="https://cdn.pixabay.com/download/audio/2021/06/15/audio_2faf0a3e84.mp3?filename=correct-1488.mp3" preload="auto"></audio>
+  <audio id="failSound" src="https://cdn.pixabay.com/download/audio/2022/03/14/audio_4ab28b574d.mp3?filename=fail-12674.mp3" preload="auto"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
